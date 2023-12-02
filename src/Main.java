@@ -5,13 +5,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int N = scanner.nextInt();
-        int quotient = 0;
+        int digit = 0;
 
-        while(N >= 10) {
-            N /= 10;
-            quotient++;
+        while (N > 0) {
+            if (N % 10 % 2 == 1) {
+                System.out.println(N % 10);
+                break;
+            } else {
+                N /= 10;
+            }
         }
-
-        System.out.println(quotient + 1);
+        if (N == 0) {
+            System.out.println("NO");
+        }
     }
 }
