@@ -5,17 +5,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int N = scanner.nextInt();
+        int min = 9;
 
         while (N > 0) {
-            if (N % 10 % 2 == 1) {
-                System.out.println(N % 10);
-                break;
-            } else {
-                N /= 10;
+            if (N % 10 > 0 && N % 10 < min) {
+                min = N % 10;
             }
+            N /= 10;
         }
-        if (N == 0) {
-            System.out.println("NO");
-        }
+
+        System.out.println(min);
     }
 }
