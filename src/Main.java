@@ -5,7 +5,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int N = scanner.nextInt();
-        int digit = 0;
 
         while (N > 0) {
             if (N % 10 % 2 == 1) {
