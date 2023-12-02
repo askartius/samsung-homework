@@ -5,7 +5,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int N = scanner.nextInt();
+        int quotient = 0;
 
-        System.out.println((25 + N) / 2 * (N - 25) / 2);
+        while(N >= 10) {
+            N /= 10;
+            quotient++;
+        }
+
+        System.out.println(quotient + 1);
     }
 }
