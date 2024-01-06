@@ -4,19 +4,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int k = scanner.nextInt();
-        int n = 1;
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int res = 0;
 
-        while (n <= k) {
-            if (scanner.nextInt() <= 437) {
-                System.out.println("Crash " + n);
-                break;
-            }
-            n += 1;
+        if (a < 0) {
+            a = -a;
+            b = -b;
         }
 
-        if (n > k) {
-            System.out.println("No crash");
+        while (a > 0) {
+            res += b;
+            a -= 1;
         }
+
+        System.out.println(res);
     }
 }
