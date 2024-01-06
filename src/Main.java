@@ -4,16 +4,27 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int N = scanner.nextInt();
-        int min = 9;
+        int[] primeNumbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
 
-        while (N > 0) {
-            if (N % 10 > 0 && N % 10 < min) {
-                min = N % 10;
+        int num = scanner.nextInt() + 1;
+        boolean isPrime = false;
+
+        while (!isPrime) {
+            for (int primeNumber : primeNumbers) {
+                if (num % primeNumber != 0) {
+                    isPrime = true;
+                } else {
+                    if (num == primeNumber) {
+                        isPrime = true;
+                    } else {
+                        isPrime = false;
+                        num += 1;
+                    }
+                    break;
+                }
             }
-            N /= 10;
         }
 
-        System.out.println(min);
+        System.out.println(num);
     }
 }
