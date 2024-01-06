@@ -4,20 +4,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int res = 0;
+        int n = scanner.nextInt();
+        int num = 2;
 
-        if (a < 0) {
-            a = -a;
-            b = -b;
+        while (n > 0) {
+            System.out.print(num + " ");
+            num += 2;
+            n--;
         }
-
-        while (a > 0) {
-            res += b;
-            a -= 1;
-        }
-
-        System.out.println(res);
     }
 }
