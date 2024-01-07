@@ -5,22 +5,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int count = scanner.nextInt();
-        int[] numbers = new int[count];
+        int sum = 0;
+        boolean noEven = true;
 
         for (int i = 0; i < count; i++) {
-            numbers[i] = scanner.nextInt();
-        }
-
-        int num = scanner.nextInt();
-
-        for (int i = 0; i < numbers.length; i++) {
-            if (num == numbers[i]) {
-                System.out.println(i + 1);
-                break;
-            }
-            if (i == numbers.length - 1) {
-                System.out.println("NO");
+            int num = scanner.nextInt();
+            if (num % 2 == 0) {
+                sum += num;
+                noEven = false;
             }
         }
+
+        System.out.println(noEven ? "NO" : sum);
     }
 }
