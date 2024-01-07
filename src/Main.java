@@ -4,22 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int num = scanner.nextInt();
-        int divisor = 3;
-        boolean isPrime = true;
+        double a = scanner.nextDouble();
+        int n = scanner.nextInt();
+        double res = 1;
 
-        if (num % 2 == 0 && num != 2) {
-            isPrime = false;
-        } else {
-            while (divisor < num) {
-                if (num % divisor == 0) {
-                    isPrime = false;
-                    break;
-                }
-                divisor += 2;
-            }
+        if (n % 2 != 0) {
+            res = a;
+            n--;
         }
 
-        System.out.println(isPrime ? "prime" : "composite");
+        a *= a;
+        n /= 2;
+
+        while(n > 0) {
+            res *= a;
+            n--;
+        }
+
+        System.out.println(res);
     }
 }
