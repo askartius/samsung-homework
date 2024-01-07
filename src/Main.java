@@ -4,24 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int c = scanner.nextInt();
-        int d = scanner.nextInt();
+        int num = scanner.nextInt();
+        int sum = 0;
 
-        int x = 10000 / a + 1;
-        boolean found = false;
-
-        while (a * x + b < 100000) {
-            if ((a * x + b) % c == d) {
-                System.out.print(a * x + b + " ");
-                found = true;
-            }
-            x++;
+        while(num > 0) {
+            sum += num % 10;
+            num /= 10;
         }
 
-        if (!found) {
-            System.out.println(-1);
-        }
+        System.out.println(sum);
     }
 }
