@@ -5,13 +5,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int num = scanner.nextInt();
-        int sum = 0;
+        int digit;
+        boolean equal = false;
 
-        while(num > 0) {
-            sum += num % 10;
+        while (num > 0) {
+            digit = num % 10;
             num /= 10;
+
+            if (num % 10 == digit) {
+                equal = true;
+            }
         }
 
-        System.out.println(sum);
+        System.out.println(equal ? "YES" : "NO");
     }
 }
