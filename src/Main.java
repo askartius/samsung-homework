@@ -4,23 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double a = scanner.nextDouble();
-        int n = scanner.nextInt();
-        double res = 1;
+        int count = scanner.nextInt();
+        int[] numbers = new int[count];
 
-        if (n % 2 != 0) {
-            res = a;
-            n--;
+        for (int i = 0; i < count; i++) {
+            numbers[i] = scanner.nextInt();
         }
 
-        a *= a;
-        n /= 2;
+        int num = scanner.nextInt();
 
-        while(n > 0) {
-            res *= a;
-            n--;
+        for (int i = 0; i < numbers.length; i++) {
+            if (num == numbers[i]) {
+                System.out.println(i + 1);
+                break;
+            }
+            if (i == numbers.length - 1) {
+                System.out.println("NO");
+            }
         }
-
-        System.out.println(res);
     }
 }
