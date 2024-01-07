@@ -4,13 +4,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int n = scanner.nextInt();
-        int num = 2;
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+        int d = scanner.nextInt();
 
-        while (n > 0) {
-            System.out.print(num + " ");
-            num += 2;
-            n--;
+        int x = 10000 / a + 1;
+        boolean found = false;
+
+        while (a * x + b < 100000) {
+            if ((a * x + b) % c == d) {
+                System.out.print(a * x + b + " ");
+                found = true;
+            }
+            x++;
+        }
+
+        if (!found) {
+            System.out.println(-1);
         }
     }
 }
