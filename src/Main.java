@@ -5,18 +5,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int num = scanner.nextInt();
-        int digit;
-        boolean equal = false;
+        int divisor = 3;
+        boolean isPrime = true;
 
-        while (num > 0) {
-            digit = num % 10;
-            num /= 10;
-
-            if (num % 10 == digit) {
-                equal = true;
+        if (num % 2 == 0 && num != 2) {
+            isPrime = false;
+        } else {
+            while (divisor < num) {
+                if (num % divisor == 0) {
+                    isPrime = false;
+                    break;
+                }
+                divisor += 2;
             }
         }
 
-        System.out.println(equal ? "YES" : "NO");
+        System.out.println(isPrime ? "prime" : "composite");
     }
 }
